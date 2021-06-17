@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2LinkXamarin.Views.ListMessagesPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MyListView" RowHeight="100" 
+                ItemTapped="Handle_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="15">
+                                <Label Text = "{Binding PostDate}"/>
+                                <Label Text = "{Binding Content}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button  Text="Publier un nouveau message"
+                    Clicked="AddMessage"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

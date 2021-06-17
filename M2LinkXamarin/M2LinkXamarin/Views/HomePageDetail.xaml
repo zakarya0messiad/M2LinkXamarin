@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2LinkXamarin.HomePageDetail"
+             Title="Accueil">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <StackLayout Orientation="Horizontal" Padding="1">
+                    <Label FontAttributes="Bold"  FontSize="20" Text = "Abonnées : "/>
+                    <Label FontAttributes="Bold"  FontSize="20" Text = "{Binding NbFollowers}"/>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Horizontal" Padding="1">
+                    <Label FontAttributes="Bold"  FontSize="20" Text = "Abonnement : "/>
+                    <Label FontAttributes="Bold"  FontSize="20" Text = "{Binding NbFollow}"/>
+                </StackLayout>
+            </Frame>
+            <ListView x:Name="MyListView" RowHeight="100" 
+                ItemTapped="Handle_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="15">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text = "{Binding OwnerPseudo}" FontSize="20" FontAttributes="Bold"/>
+                                    <Label Text = "{Binding PostDate}" FontSize="20" />
+                                </StackLayout>
+                                <Label Text = "{Binding Content}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2LinkXamarin.Views.ModifyProfilPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10">
+            <BoxView HeightRequest="20"/>
+            <Label FontAttributes="Bold"  FontSize="20" Text = "Modifier mon compte"  HorizontalOptions="Center" />
+
+            <BoxView HeightRequest="20"/>
+            <Frame>
+                <StackLayout Orientation="Vertical">
+                    <Entry x:Name="LastnameRegister" Placeholder="Nom de famille *"   
+                            Text="{Binding Nom}"/>
+                    <Entry x:Name="FirstnameRegister" Placeholder="Prénom *"   
+                            Text="{Binding Prenom}"/>
+                    <Entry x:Name="PseudoRegister" Placeholder="Pseudo *"   
+                            Text="{Binding Pseudo}"/>
+                    <Entry x:Name="EmailRegister" Placeholder="Email *"   
+                           Keyboard="Email"   Text="{Binding Email}"/>
+                    <Entry x:Name="NewPasswordRegister" Placeholder="Nouveau mot de passe *"
+                           IsPassword="True"  Text="{Binding Mdp}"/>
+                    <Entry x:Name="ConfirmationPasswordRegister" Placeholder="Confirmation du nouveau mot de passe *"
+                           IsPassword="True"  Text="{Binding Mdp}"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Les champs avec une astérisque (*) sont obligatoires."
+                    TextColor="Black"/>
+            <Label Text="Le mot de passe doit avoir au moins 8 caractères, contenir une lettre minuscule et masjucule, un chiffre et un caractère spécial."
+                    TextColor="Black"/>
+            <Label Text="Si vous ne voulez pas modifier le mot de passe veuillez taper et confirmer votre ancien mot de passe."
+                    TextColor="Black"/>
+            <Label x:Name="messageLabelRegister" Font="Large" TextColor="Red"/>
+            <BoxView HeightRequest="20"/>
+            <Button Text="Modifier"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    Clicked="Button_Modify"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

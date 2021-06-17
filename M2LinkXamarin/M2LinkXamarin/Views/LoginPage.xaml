@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2LinkXamarin.LoginPage">
+    <TabbedPage.Children>
+        
+        <ContentPage Title="Se connecter" >
+            <ContentPage.Content>
+                <StackLayout Orientation="Vertical" Padding="30">
+                    <Label Text="Connexion" Font="Large" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+                    <Frame>
+                        <StackLayout Orientation="Vertical" Spacing="10">
+                            <Entry x:Name="Pseudo" Placeholder="Pseudo"/>
+                            <Entry x:Name="Password" Placeholder="Mot de passe" IsPassword="True"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label x:Name="messageLabel" TextColor="Red"/>
+                    <BoxView HeightRequest="10"/>
+                    <Button Text="Connexion"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"
+                    Clicked="Button_Login"/>
+                    <Label TextColor="Silver" VerticalOptions="EndAndExpand" Text="© 2021 - Our M2Link Xamarin mobile Application, Salah et Zakarya" />
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+        <ContentPage Title="S'inscrire" >
+            <ContentPage.Content>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Frame>
+                        <StackLayout Orientation="Vertical">
+                            <Entry x:Name="LastnameRegister" Placeholder="Nom *"/>
+                            <Entry x:Name="FirstnameRegister" Placeholder="Prénom *"/>
+                            <Entry x:Name="PseudoRegister" Placeholder="Pseudo *"/>
+                            <Entry x:Name="EmailRegister" Placeholder="Email *" Keyboard="Email"/>
+                            <Entry x:Name="PasswordRegister" Placeholder="Mot de passe *" IsPassword="True"/>
+                            <Entry x:Name="ConfirmationPasswordRegister" Placeholder="Confirmez votre mot de passe *" IsPassword="True"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Les champs avec une astérisque (*) sont obligatoires."/>
+                    <Label Text="Le mot de passe doit avoir au moins 8 caractères, contenir une lettre minuscule et masjucule, un chiffre et un caractère spécial."/>
+                    <Label x:Name="messageLabelRegister" TextColor="Red"/>
+                    <BoxView HeightRequest="10"/>
+                    <Button Text="S'inscrire" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"
+                            Clicked="Button_Register"/>
+                    <Label TextColor="Silver" VerticalOptions="EndAndExpand" Text="© 2021 - Our M2Link Xamarin mobile Application, Salah et Zakarya" />
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2LinkXamarin.Views.MyProfilPage">
+    <ContentPage.Content>
+        <StackLayout Padding="40">
+            <BoxView HeightRequest="30"/>
+            <Label Text="{Binding MyProfil.Pseudo}" TextColor="Black" Font="Large" FontAttributes="Bold" 
+                   FontSize="20" HorizontalOptions="Center"/>
+            <BoxView HeightRequest="20"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text = "{Binding MyProfil.Prenom}" TextColor="Black" FontSize="18"/>
+                <Label Text = "{Binding MyProfil.Nom}" TextColor="Black" FontSize="18"/>
+            </StackLayout>
+            <Label Text = "{Binding MyProfil.Email}" TextColor="Black" FontSize="18"/>
+            <Button Text="Modifier mon profil"   Clicked="Modify"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
